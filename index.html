@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Happy Raksha Bandhan 🧵</title>
+<meta name="description" content="Ek special jugaadu gift aapke sibling ke liye.">
+
+<!-- Fonts: Baloo 2 (festive display) + Poppins (body/Hinglish friendly) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script>
+  let pin = prompt("Enter the secret Rakhi PIN to see your gift (Hint: 1234):");
+  if (pin !== "1234") { 
+    // Replaces the whole page if wrong PIN is entered
+    document.body.innerHTML = "<h2 style='text-align:center; margin-top:20vh; font-family:sans-serif;'>Wrong PIN! No gift for you! 😜</h2>";
+    window.stop(); 
+  }
+</script>
+
+<!-- ============ SOUND GATE ============ -->
+<div id="sound-gate">
+  <div class="gate-card">
+    <div class="gate-icon">🧵🎶</div>
+    <h2 class="gate-title">Music ke saath dekhna hai?</h2>
+    <p class="gate-sub">Best experience ke liye sound ON rakhna recommended hai 😄</p>
+    <div class="gate-actions">
+      <button id="gate-yes" class="gate-btn gate-btn-yes">🔊 Haan, Music On</button>
+      <button id="gate-no" class="gate-btn gate-btn-no">🔇 Nahi, Silent Rakho</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NETFLIX-STYLE INTRO ============ -->
+<div id="netflix-intro" hidden>
+  <div class="nf-logo-wrap">
+    <div class="nf-bars">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="nf-letter">R</div>
+  </div>
+  <div class="nf-tagline">RAKHI FLIX</div>
+  <div class="nf-sub">ek ghatiya production by your chhota bhai</div>
+  <button id="skip-intro" class="skip-btn">Skip Intro ⏭</button>
+</div>
+
+<audio id="intro-sound" preload="auto">
+  <source src="assets/audio/intro-sound.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============ MAIN APP ============ -->
+<div id="app" hidden>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="blob b4"></span><span class="blob b5"></span><span class="blob b6"></span>
+    <span class="blob b7"></span><span class="blob b8"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">🧵 Bhai ki Taraf Se</div>
+    <button id="music-toggle" class="icon-btn" title="Music on/off">🔇</button>
+  </header>
+
+  <!-- ---------- SELECT SCREEN ---------- -->
+  <section id="select-screen" class="screen active">
+    <div class="select-inner">
+      <p class="eyebrow">Raksha Bandhan Special 2026</p>
+      <h1 class="big-title">Aaj Kise <span class="highlight">Roast</span> Karna Hai? 😏</h1>
+      <p class="select-sub">Apni kahaani padhne ke liye select kare.</p>
+
+      <div class="sister-cards">
+        <button class="sister-card" data-target="person-1-page" style="--card-accent: var(--saffron);">
+          <span class="card-photo">
+            <img src="assets/images/person1.jpg" alt="Person 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="photo-fallback">📷<small>person1.jpg daalo</small></span>
+          </span>
+          <span class="card-name">[Person 1 Name]</span>
+          <span class="card-tag">[Age Gap] • [Profession/Study]</span>
+        </button>
+
+        <button class="sister-card" data-target="person-2-page" style="--card-accent: var(--rose);">
+          <span class="card-photo">
+            <img src="assets/images/person2.jpg" alt="Person 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="photo-fallback">📷<small>person2.jpg daalo</small></span>
+          </span>
+          <span class="card-name">[Person 2 Name]</span>
+          <span class="card-tag">[Age Gap] • [Profession/Study]</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- PERSON 1 PAGE ---------- -->
+  <section id="person-1-page" class="screen sister-page" data-accent="saffron">
+    <button class="back-btn">← Wapas Chalo</button>
+
+    <div class="sister-hero">
+      <span class="hero-photo">
+        <img src="assets/images/person1-hero.jpg" alt="Person 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="photo-fallback big">📷<small>person1-hero.jpg daalo</small></span>
+      </span>
+      <div>
+        <h2>[Person 1 Name]</h2>
+        <p class="hero-sub">[Yahan Person 1 ki ek funny detail ya habit likho. Example: Humesha mere snacks churaane wali...]</p>
+      </div>
+    </div>
+
+    <div class="rakhi-thread" aria-hidden="true"></div>
+
+    <div class="timeline">
+      <article class="story-card">
+        <span class="story-emoji">🚲💥</span>
+        <h3>[Story Title 1]</h3>
+        <p>[Bachpan ka koi funny kissa ya incident yahan daalo.]</p>
+        <div class="meme-row">
+          <span class="meme-emoji">🐱</span><span class="meme-emoji">😹</span><span class="meme-emoji">🙈</span>
+        </div>
+      </article>
+
+      <article class="story-card">
+        <span class="story-emoji">🛋️🧠</span>
+        <h3>[Story Title 2]</h3>
+        <p>[Koi aur funny memory ya unki kisi aadat pe roast yahan likho.]</p>
+        <div class="meme-row">
+          <span class="meme-emoji">🛋️</span><span class="meme-emoji">📓</span><span class="meme-emoji">😹</span>
+        </div>
+      </article>
+    </div>
+
+    <button class="cta-final">Ab aage dekho 😆→</button>
+  </section>
+
+  <!-- ---------- PERSON 2 PAGE ---------- -->
+  <section id="person-2-page" class="screen sister-page" data-accent="rose">
+    <button class="back-btn">← Wapas Chalo</button>
+
+    <div class="sister-hero">
+      <span class="hero-photo">
+        <img src="assets/images/person2-hero.jpg" alt="Person 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="photo-fallback big">📷<small>person2-hero.jpg daalo</small></span>
+      </span>
+      <div>
+        <h2>[Person 2 Name]</h2>
+        <p class="hero-sub">[Yahan Person 2 ki koi funny aadat ya background detail likho.]</p>
+      </div>
+    </div>
+
+    <div class="rakhi-thread" aria-hidden="true"></div>
+
+    <div class="timeline">
+      <article class="story-card">
+        <span class="story-emoji">🚆🩹</span>
+        <h3>[Story Title 1]</h3>
+        <p>[Bachpan ka koi funny incident ya embarrassing moment yahan likho.]</p>
+        <div class="meme-row">
+          <span class="meme-emoji">🩹</span><span class="meme-emoji">🙀</span><span class="meme-emoji">😹</span>
+        </div>
+      </article>
+
+      <article class="story-card">
+        <span class="story-emoji">📱💊</span>
+        <h3>[Story Title 2]</h3>
+        <p>[Koi aur kissa ya unki current life/job ko le kar funny taunt yahan daalo.]</p>
+        <div class="meme-row">
+          <span class="meme-emoji">📱</span><span class="meme-emoji">💊</span><span class="meme-emoji">🐱</span>
+        </div>
+      </article>
+    </div>
+
+    <button class="cta-final">Ab aage dekho 😆→</button>
+  </section>
+
+  <!-- ---------- FINAL MESSAGE SCREEN ---------- -->
+  <section id="final-message" class="screen">
+    <canvas id="confetti-canvas"></canvas>
+    <div class="final-inner">
+      <div class="rakhi-icon">🧵🪢</div>
+      <h1 class="final-title">Happy Raksha Bandhan!</h1>
+      <p class="final-text" style="font-size: 3rem; text-align: center;">
+        🙏 🫡
+      </p>
+      <div class="funny-note">
+        <p>Special Message:</p>
+        <p class="funny-line">Paise nahi hai, isse hi kaam chala lo 😭💸🙏</p>
+      </div>
+      <p class="signature">— tumhara bhai</p>
+      <div class="final-actions">
+        <button id="go-select-again" class="ghost-btn">↺ Dusri Kahaani Dekho</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<audio id="bg-music" loop preload="auto">
+  <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/script.js"></script>
+</body>
+</html>
